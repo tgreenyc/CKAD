@@ -37,7 +37,7 @@ spec:
   - name: nvidia
     image: tesla
   nodeSelector:
-	accelerator: nvidia-tesla-p100
+    accelerator: nvidia-tesla-p100
 ```
 
 Taints – they allow a node to repel a set of pods.
@@ -90,8 +90,8 @@ Rollback to the previous deployment
 ```yaml
 # Important Job properties
 spec:
-	completions: 5
-	parallelism: 5
+  completions: 5
+  parallelism: 5
 ```
   
 `kubectl run cronjob --image=busybox --schedule="*/1 * * * *" --restart=OnFailure --command -- /bin/sh -c 'date;echo Hello from the Kubernetes Cluster'`
@@ -185,7 +185,7 @@ Use `envFrom` to define all of the ConfigMap’s data as container environment v
 ```yaml
 # use ‘myuser’ service account for Pod
 spec:
-	serviceAccountName: myuser # we use pod.spec.serviceAccountName
+  serviceAccountName: myuser # we use pod.spec.serviceAccountName
 ```
   
 
@@ -317,7 +317,7 @@ spec:
 spec:
   initContainers:
   - name: init
-	image: drupal:8.6
+    image: drupal:8.6
 ```
 
 you can target multiple objects in a single command (e.g. `kubectl delete po nginx1 nginx2 nginx3` or `nginx{1..3}`)
